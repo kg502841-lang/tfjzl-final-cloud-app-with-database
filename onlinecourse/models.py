@@ -102,7 +102,7 @@ class Question(models.Model):
     grade = models.IntegerField(default=1)
 
     def __str__(self):
-        return "Question: " + self.question_text
+        return self.question_text
 
     # Return True only if every correct choice was selected and no wrong one was
     def is_get_score(self, selected_ids):
@@ -119,7 +119,7 @@ class Choice(models.Model):
     is_correct = models.BooleanField(default=False)
 
     def __str__(self):
-        return "Choice: " + self.choice_text
+        return self.choice_text
 
 
 # One enrollment could have multiple submission
